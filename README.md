@@ -19,18 +19,51 @@ Score, 90
 ```
 ## ANÁLISE
 ### Teste e Cobertura
-    bundle exec rspec
+```
+bundle exec rspec
+```
 ### Lint
-    bundle exec rubocop
+```
+bundle exec rubocop
+```
 ### Score
-    bundle exec rubycritic
+```
+bundle exec rubycritic
+```
 
 # CONFIGURAÇÃO
 ## DOCKER
 ### CRIANDO
+```
 docker-compose up --build
+```
 ### EXECUTANDO
+```
 docker compose up
+```
+```
 docker-compose run web rails db:create
+```
+```
 docker-compose run web rails db:migrate
+```
+```
 docker-compose run web rspec
+```
+
+### Se tiver problemas com tailwind execute os comandos abaixo
+```
+docker-compose run web rm -rf node_modules && npm install
+```
+```
+docker-compose run web npm install esbuild
+```
+```
+docker-compose run web bundle exec rake assets:precompile
+```
+```
+docker-compose run web bundle exec rake assets:clean
+```
+```
+docker-compose run web bin/rails tailwindcss:build
+```
