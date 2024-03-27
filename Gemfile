@@ -6,44 +6,41 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.5'
 
 gem 'activeadmin', '~> 2.14'
+gem 'acts_as_paranoid'
+gem 'acts_as_tenant'
 gem 'bootsnap', require: false
 gem 'chartkick', '~> 3.3.0'
 gem 'devise'
+gem 'devise_token_auth'
 gem 'foreman'
 gem 'groupdate'
 gem 'importmap-rails'
 gem 'jbuilder'
+gem 'json', '2.7.1'
 gem 'kaminari'
 gem 'pg', '~> 1.2'
 gem 'puma', '~> 5.0'
+gem 'rack-cors', require: 'rack/cors'
 gem 'rails', '~> 7.0.4', '>= 7.0.4.2'
 gem 'ransack', '< 4.0'
 gem 'rswag-api'
 gem 'rswag-ui'
 gem 'sassc'
+gem 'sidekiq', '~> 7.2'
 gem 'simple_form'
 gem 'simple_form-tailwind'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'tailwindcss-rails'
 gem 'turbo-rails'
-gem 'tzinfo-data',
-    platforms: %i[mingw mswin x64_mingw jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'yaml'
-gem 'json', '2.7.1'
-gem 'acts_as_tenant'
-gem 'rack-cors', require: 'rack/cors'
-gem 'acts_as_paranoid'
-
-# Auth
-gem 'devise_token_auth'
 
 group :development, :test do
   gem 'annotate'
   gem 'binding_of_caller'
   gem 'cpf_faker'
   gem 'database_cleaner'
-  # gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
   gem 'ffaker'
   gem 'json_matchers'
@@ -79,5 +76,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
-gem 'sidekiq', '~> 7.2'
