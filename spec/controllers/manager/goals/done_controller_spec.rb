@@ -24,8 +24,8 @@ RSpec.describe Manager::Goals::DoneController do
     it 'status todo to done' do
       post :many, params: { done: { goal_ids: goals.pluck(:id) } }
       expect(goals.first.reload.status).to eq('done')
-      expect(flash[:notice]).to
-      eq(I18n.t('controllers.manager.goals.done.other'))
+      expect(flash[:notice])
+        .to eq(I18n.t('controllers.manager.goals.done.other'))
     end
   end
 end
